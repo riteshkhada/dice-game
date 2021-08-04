@@ -17,9 +17,9 @@ diceEl.classList.add("hidden");
 
 btnRoll.addEventListener("click", function () {
   const dice = Math.trunc(Math.random() * 6) + 1;
-});
 
-//display dice
-diceEl.classList.remove("hidden");
-diceEl.src = `dice-${dice}.png`;
-//check for no 1; if true, switch to next player
+  //display dice
+  diceEl.classList.remove("hidden");
+  diceEl.src = `dice-${dice}.png`;
+  //check for no 1; if true, switch to next player
+});

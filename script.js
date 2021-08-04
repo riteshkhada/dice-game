@@ -11,6 +11,7 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
+let currentScore = 0;
 //starting conditions
 player0.textContent = 0;
 player1.textContent = 0;
@@ -26,7 +27,9 @@ btnRoll.addEventListener("click", function () {
   diceEl.src = `dice-${dice}.png`;
 
   //check for rolled 1;
-
+  if (!dice == 1) {
+    currentScore += dice;
+  }
   //if not add dice to current score
 
   //else switch player

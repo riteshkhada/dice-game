@@ -37,12 +37,23 @@ btnRoll.addEventListener("click", function () {
     currentScore += dice;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
-  } else {
+  }
+  //switch to next player
+  else {
     document.getElementById(`current--${activePlayer}`).textContent = 0;
     currentScore = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
     player0.classList.toggle("player--active");
     player1.classList.toggle("player--active");
   }
-  //switch player
+});
+//add scores to active player score
+btnHold.addEventListener("click", function () {
+  scores[activePlayer] += currentScore;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    scores[activePlayer];
+
+  //check if player score is >=100
+
+  //switch to next player
 });

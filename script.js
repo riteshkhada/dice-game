@@ -11,12 +11,14 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
-let currentScore = 0;
 //starting conditions
 player0.textContent = 0;
 player1.textContent = 0;
 diceEl.classList.add("hidden");
 
+const scores = [0, 0];
+let currentScore = 0;
+let activePlayer = 0;
 //rolling dice functionality
 
 btnRoll.addEventListener("click", function () {
@@ -27,10 +29,13 @@ btnRoll.addEventListener("click", function () {
   diceEl.src = `dice-${dice}.png`;
 
   //check for rolled 1;
-  if (!dice == 1) {
+  if (dice !== 1) {
+    //add dice to current score
     currentScore += dice;
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
+  } else {
+    activePlayer = activePlayer === 0 ? 1 : 0;
   }
-  //if not add dice to current score
-
-  //else switch player
+  //switch player
 });
